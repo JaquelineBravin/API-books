@@ -36,3 +36,7 @@ yarn-error.*
 
 #json
 package-lock.json
+
+# Visual Studio Code
+.vscode
+.history
