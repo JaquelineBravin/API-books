@@ -34,9 +34,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-#json
-package-lock.json
-
 # Visual Studio Code
 .vscode
 .history
