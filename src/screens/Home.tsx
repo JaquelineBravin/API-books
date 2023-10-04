@@ -1,13 +1,22 @@
+import React from "react";
 import {
   View,
   Text,
   TextInput,
+  ScrollView,
   Image,
   SafeAreaView,
-  Button,
 } from "react-native";
 
 export default function Home() {
+  const bookCovers = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
+  ];
   return (
     <SafeAreaView className="flex-1 justify-center">
       <View className="flex-1 bg-gray-800">
@@ -18,14 +27,22 @@ export default function Home() {
           className="h-10 m-3 p-3 bg-zinc-700 rounded-2xl text-neutral-500 text-sm font-normal"
           placeholder="Pesquisar"
         />
-        <View className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          {/* <Image
-          source={require("./caminho-para-sua-imagem.png")}
-          className="w-6 h-6 text-gray-400"
-        /> */}
-        </View>
-        <Text className="text-slate-300">Destaques</Text>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={{ flexDirection: "row", marginTop: 10, paddingLeft: 10 }}
+        >
+          {bookCovers.map((coverUrl, index) => (
+            <Image
+              key={index}
+              source={{ uri: coverUrl }}
+              style={{ width: 100, height: 150, marginRight: 10 }}
+            />
+          ))}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
 }
+
+export default Home;
