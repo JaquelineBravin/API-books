@@ -7,16 +7,10 @@ import {
   Image,
   SafeAreaView,
 } from "react-native";
+import ScrollViewHorizontal from "../components/ScrollViewHorizontal";
+import TabRoutesLayout from "./_layout";
 
-export default function Home() {
-  const bookCovers = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
-  ];
+const HomeScreen: React.FC = () => {
   return (
     <SafeAreaView className="flex-1 justify-center">
       <View className="flex-1 bg-gray-800">
@@ -27,22 +21,14 @@ export default function Home() {
           className="h-10 m-3 p-3 bg-zinc-700 rounded-2xl text-neutral-500 text-sm font-normal"
           placeholder="Pesquisar"
         />
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={{ flexDirection: "row", marginTop: 10, paddingLeft: 10 }}
-        >
-          {bookCovers.map((coverUrl, index) => (
-            <Image
-              key={index}
-              source={{ uri: coverUrl }}
-              style={{ width: 100, height: 150, marginRight: 10 }}
-            />
-          ))}
-        </ScrollView>
+        <ScrollViewHorizontal />
       </View>
     </SafeAreaView>
   );
 }
+
+export default HomeScreen;
+
+
 
 
