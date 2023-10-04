@@ -1,6 +1,13 @@
-import { View, Text, TextInput, Image, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Image,
+  SafeAreaView,
+  Button,
+} from "react-native";
 
-const Home = () => {
+export default function Home() {
   return (
     <SafeAreaView className="flex-1 justify-center">
       <View className="flex-1 bg-gray-800">
@@ -21,6 +28,4 @@ const Home = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default Home;
+}
