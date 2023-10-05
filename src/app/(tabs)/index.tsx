@@ -25,10 +25,6 @@ const HomeScreen: React.FC = () => {
       </View>
     </SafeAreaView>
   );
-}
+};
 
 export default HomeScreen;
-
-
-
-
