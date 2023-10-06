@@ -14,11 +14,11 @@ const HomeScreen: React.FC = () => {
   return (
     <SafeAreaView className="flex-1 justify-center">
       <View className="flex-1 bg-gray-800">
-        <Text className="text-zinc-400 text-lg ml-6 mt-10 font-semibold">
+        <Text className="text-zinc-400 text-xl ml-6 mt-4 font-semibold">
           O que gostaria de ler?
         </Text>
         <TextInput
-          className="h-10 m-3 p-3 bg-zinc-700 rounded-2xl text-neutral-500 text-sm font-normal"
+          className="h-11 w-11/12 m-3 p-3 left-2 bg-zinc-700 rounded-2xl"
           placeholder="Pesquisar"
         />
         <ScrollViewHorizontal />
