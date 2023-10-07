@@ -7,16 +7,16 @@ export interface Book {
   subjects: string[];
   bookshelves: string[];
   languages: string[];
-  copyright: boolean;
   media_type: string;
   formats: Formats;
   download_count: number;
+  cover_url: string;
 }
 
 export interface Author {
-  name: string;
   birth_year: number;
   death_year: number;
+  name: string;
 }
 
 export interface Formats {
@@ -29,14 +29,15 @@ export interface Formats {
   "application/rdf+xml": string;
 }
 
-const url_base = "https://gutendex.com/books?languages=pt";
-
-async function getList() {
-  const data = await axios.get(`${url_base}`);
-
-  return { data };
+export async function fetchBooks() {
+  try {
+    const response = await axios.get(
+      "https://gutendex.com/books/?languages=pt&page=4"
+    );
+    console.log("Dados da API:", response.data.results);
+    return response.data.results;
+  } catch (error) {
+    console.error("Erro ao buscar os livros:", error);
+    return [];
+  }
 }
-
-export const FetchApi = {
-  getList,
-};

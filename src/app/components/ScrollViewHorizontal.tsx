@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  ScrollView,
-  Image,
-} from "react-native";
+import { ScrollView, Image } from "react-native";
 
 export const ScrollViewHorizontal = () => {
   const bookCovers: string[] = [
@@ -14,7 +11,6 @@ export const ScrollViewHorizontal = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUUs97D0_PuByvHgDbEOkwPlMk0lnrJ-dl0S7bnk&s",
   ];
   return (
-
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
@@ -28,8 +24,7 @@ export const ScrollViewHorizontal = () => {
         />
       ))}
     </ScrollView>
-
   );
-}
+};
 
 export default ScrollViewHorizontal;
