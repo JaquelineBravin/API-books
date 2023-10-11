@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FlatListBookHorizontal } from "../../app/components/FlatListBookHorizontal";
+import { FlatListBookVertical3Col } from "../../app/components/FlatListBookVertical3Col";
 import {
 	View,
 	Text,
@@ -6,6 +8,8 @@ import {
 	Image,
 	SafeAreaView,
 	FlatList,
+	SectionList,
+	StyleSheet,
 } from "react-native";
 import { fetchBooks, Book } from "../../api/route";
 const HomeScreen: React.FC = () => {
@@ -13,47 +17,75 @@ const HomeScreen: React.FC = () => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const fetchedBooks = await fetchBooks();
+			const fetchedBooks: any = await fetchBooks();
 			setBooks(fetchedBooks);
 		}
 
 		fetchData();
 	}, []);
 
+	const DATA = [
+		{
+			title: 'Populares',
+			data: [books],
+		},
+		// {
+		// 	title: 'Em breve',
+		// 	data: [books],
+		// },
+		// {
+		// 	title: 'Premiados',
+		// 	data: [books],
+		// },
+		// {
+		// 	title: 'Brasileiros',
+		// 	data: [books],
+		// },
+
+	];
+
 	return (
-		<SafeAreaView className="flex-1 justify-center">
-			<View className="flex-1 bg-gray-800">
+		<SafeAreaView className=" container flex-1 bg-gray-800">
+			<View className="flex">
 				<Text className="text-zinc-400 text-xl ml-6 mt-4 font-semibold">
 					O que gostaria de ler?
 				</Text>
 				<TextInput
-					className="h-11 w-11/12 m-3 p-3 left-2 bg-zinc-700 rounded-2xl"
+					className="h-11 w-11/12 m-3 p-3 left-2 bg-zinc-700 rounded-2xl fixed"
 					placeholder="Pesquisar"
 				/>
 
-				<FlatList
-					horizontal={true}
+				<FlatListBookHorizontal />
+			</View>
+
+			<SectionList
+				sections={DATA}
+				keyExtractor={(item: any, index: any) => item + index}
+				renderSectionHeader={({ section: { title } }) => (
+					<Text className="flex text-white text-base">{title}</Text>
+				)}
+				renderItem={() => (
+					<FlatList
+					horizontal={false}
 					showsHorizontalScrollIndicator={false}
+					numColumns={3}
+			
 					data={books}
 					renderItem={({ item }
 					) => (
-						<Image
-							source={{ uri: item.formats["image/jpeg"] }}
-							style={{ width: 150, height: 220, marginRight: 12, marginLeft: 15, borderRadius: 10, top: 10 }}
-						/>
+					  <Image
+						source={{ uri: item.formats["image/jpeg"] }}
+						className="w-28 h-36 m-2 rounded-2xl top-1"
+					  />
+			
 					)}
-				/>
+				  />
+				)}
+			/>
 
-				<View className=" flex-row p-2">
-					<Text className="text-zinc-400 text-lg p-2">Populares</Text>
-					<Text className="text-zinc-400 text-lg p-2">Em breve</Text>
-					<Text className="text-zinc-400 text-lg p-2">Premiados</Text>
-					<Text className="text-zinc-400 text-lg p-2">Brasileiros</Text>
-				</View>
-
-			</View>
-		</SafeAreaView>
+		</SafeAreaView >
 	);
 };
+
 
 export default HomeScreen;
