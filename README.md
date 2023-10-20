@@ -1,5 +1,6 @@
 # API-books
 
+<<<<<<< HEAD
 - O padrão de commits utilizado deverá ser o de commits semânticos, e deverão ser em inglês, segue uma lista de tipos do padrão de commits semâmticos:
 ```
 test: indica qualquer tipo de criação ou alteração de códigos de teste. 
@@ -25,3 +26,7 @@ ci: utilizada para mudanças nos arquivos de configuração de CI.
 revert: indica a reverão de um commit anterior.
 ```
 - O padrão de variáveis será camel case (camelCase) e todas deverão ser em inglês.
+=======
+Este aplicativo é uma ferramenta que pode ser usada para facilitar o acesso a informações de livros, promovendo a educação e a cultura. O aplicativo permite que os usuários pesquisem livros por título, autor, gênero ou assunto. Ele também fornece informações sobre os livros, como sinopse, classificação e avaliações. O aplicativo é gratuito e está disponível para todos. O objetivo deste projeto é ajudar a sociedade a ter acesso a informações de livros de forma rápida e fácil. O aplicativo pode ser usado por estudantes, professores, pesquisadores e qualquer pessoa interessada em livros. O aplicativo também pode ser usado para promover a educação e a cultura, incentivando as pessoas a ler mais.
+
+>>>>>>> b2a75ce20ec62ea8638a3b834241fa0bfbf385cf

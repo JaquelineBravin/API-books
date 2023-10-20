@@ -9,7 +9,7 @@ export default function TabRoutesLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "home",
+          title: "Home",
           headerShown: false,
           headerStyle: { backgroundColor: "rgb(31 41 55)" },
           headerShadowVisible: false,
@@ -24,7 +24,7 @@ export default function TabRoutesLayout() {
       <Tabs.Screen
         name="details"
         options={{
-          title: "pesquisar",
+          title: "Detalhes",
           headerShown: false,
           headerStyle: { backgroundColor: "rgb(31 41 55))" },
           headerShadowVisible: false,
@@ -38,10 +38,11 @@ export default function TabRoutesLayout() {
       />
       <Tabs.Screen
         name="categories"
+
         options={{
-          title: "categorias",
+          title: "Categorias",
           headerShown: false,
-          headerStyle: { backgroundColor: "rgb(31 41 55))" },
+          headerTitleAlign: "left",
           headerShadowVisible: false,
           tabBarStyle: {
             backgroundColor: "rgb(31 41 55)",
