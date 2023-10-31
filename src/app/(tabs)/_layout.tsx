@@ -38,7 +38,6 @@ export default function TabRoutesLayout() {
       />
       <Tabs.Screen
         name="categories"
-
         options={{
           title: "Categorias",
           headerShown: false,

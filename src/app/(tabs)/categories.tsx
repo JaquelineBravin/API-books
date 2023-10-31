@@ -14,13 +14,11 @@ const CategoriesScreen: React.FC = () => {
     fetchData();
   }, []);
   return (
-    <ScrollView
-    horizontal={false}
-    >
-      
-
+    <ScrollView horizontal={false}>
       <View className="flex-1 bg-gray-800">
-        <Text className="flex text-2xl text-zinc-400 left-32 mt-10 ">Categorias</Text>
+        <Text className="flex text-2xl text-zinc-400 left-32 mt-10 ">
+          Categorias
+        </Text>
         <View>
           <Text className="text-xl text-zinc-400 mt-4 ml-5">Fantasia</Text>
           <FlatListBookHorizontal />
@@ -47,5 +45,3 @@ const CategoriesScreen: React.FC = () => {
 };
 
 export default CategoriesScreen;
-
-
