@@ -1,6 +1,8 @@
 import { Tabs } from "expo-router";
 import { Feather, Fontisto } from "@expo/vector-icons";
 import React from "react";
+import * as Notifications from "expo-notifications";
+import { router } from "expo-router";
 
 export default function TabRoutesLayout() {
   <div className="bg-gray-800"></div>;
