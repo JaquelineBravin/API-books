@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FlatList, Image } from 'react-native';
 import { Book, fetchBooks } from '../../api/route';
 

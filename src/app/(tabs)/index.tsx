@@ -14,9 +14,7 @@ import {
 import { fetchBooks, Book } from '../../api/route';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
-import Constants from 'expo-constants';
 import FlatListBookHorizontal from '../components/FlatListBookHorizontal';
-import { StatusBar } from 'expo-status-bar';
 
 Notifications.setNotificationHandler({
 	handleNotification: async () => ({

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Image, ScrollView } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { fetchBooks, Book } from '../../api/route';
 import FlatListBookHorizontal from '../components/FlatListBookHorizontal';
 

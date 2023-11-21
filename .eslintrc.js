@@ -45,6 +45,8 @@ module.exports = {
 				printWidth: 100
 			}
 		],
-		'no-console': 'warn'
+		'no-console': 'warn',
+		'@typescript-eslint/no-explicit-any': 'warn',
+		'@typescript-eslint/no-unused-vars': 'warn'
 	}
 };
