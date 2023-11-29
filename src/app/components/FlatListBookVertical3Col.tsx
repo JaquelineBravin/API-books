@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Button, FlatList, Image, Pressable, SectionList, Text } from 'react-native';
+import { FlatList, Image, Pressable, SectionList, Text } from 'react-native';
 import { Book, fetchBooks } from '../../api/route';
-import { Link, Tabs, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 export const FlatListBookVertical3Col = () => {
 	const route = useRouter();
@@ -18,7 +18,7 @@ export const FlatListBookVertical3Col = () => {
 
 	const handleImagePress = (book: Book) => {
 		// console.log('book => ', book);
-		route.push({ pathname: "/details", params: { id: book.id, title: book.title, NmrDown: book.download_count, laguage: book.languages } })
+		route.push({ pathname: "/details", params: { id: book.id, title: book.title, NmrDown: book.download_count, laguage: book.languages, format: book.formats['image/jpeg'] } })
 	};
 
 	const DATA = [
