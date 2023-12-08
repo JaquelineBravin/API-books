@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export interface Book {
 	id: number;
@@ -20,24 +20,22 @@ export interface Author {
 }
 
 export interface Formats {
-	"application/x-mobipocket-ebook": string;
-	"application/epub+zip": string;
-	"image/jpeg": string;
-	"application/pdf": string;
-	"text/plain; charset=utf-8": string;
-	"text/html": string;
-	"application/rdf+xml": string;
+	'application/x-mobipocket-ebook': string;
+	'application/epub+zip': string;
+	'image/jpeg': string;
+	'application/pdf': string;
+	'text/plain; charset=utf-8': string;
+	'text/html': string;
+	'application/rdf+xml': string;
 }
 
 export async function fetchBooks() {
 	try {
-		const response = await axios.get(
-			"https://gutendex.com/books/?search=java"
-		);
+		const response = await axios.get('https://gutendex.com/books/?search=java');
 		// console.log("Dados da API:", response.data.results);
 		return response.data.results;
 	} catch (error) {
-		console.error("Erro ao buscar os livros:", error);
+		console.error('Erro ao buscar os livros:', error);
 		return [];
 	}
 }
